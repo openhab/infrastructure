@@ -23,12 +23,77 @@
 
   <properties>
     <scm.gitBaseUrl>https://github.com/openhab</scm.gitBaseUrl>
-    <repo.releaseBaseUrl>https://jcenter.bintray.com</repo.releaseBaseUrl>
-    <repo.snapshotBaseUrl>https://github.com/openhab</repo.snapshotBaseUrl>
+    <repo.distBaseUrl>https://api.bintray.com/maven/openhab/mvn</repo.distBaseUrl>
+    <repo.releaseBaseUrl>https://openhab.jfrog.io/openhab</repo.releaseBaseUrl>
+    <repo.snapshotBaseUrl>${repo.releaseBaseUrl}</repo.snapshotBaseUrl>
   </properties>
 
   <!-- This POM must not have a <dependency> section, for the sake of reproducible builds. -->
 
+  <repositories>
+    <repository>
+      <releases>
+        <enabled>true</enabled>
+        <updatePolicy>never</updatePolicy>
+      </releases>
+      <snapshots>
+        <enabled>false</enabled>
+      </snapshots>
+      <id>jcenter</id>
+      <name>JCenter Repository</name>
+      <url>https://jcenter.bintray.com</url>
+    </repository>
+
+    <repository>
+      <releases>
+        <enabled>true</enabled>
+        <updatePolicy>never</updatePolicy>
+      </releases>
+      <snapshots>
+        <enabled>false</enabled>
+      </snapshots>
+      <id>openhab-artifactory-release</id>
+      <name>JFrog Artifactory Repository</name>
+      <url>${repo.releaseBaseUrl}/libs-release</url>
+    </repository>
+  </repositories>
+
+  <pluginRepositories>
+    <pluginRepository>
+      <id>jcenter</id>
+      <name>JCenter Repository</name>
+      <url>https://jcenter.bintray.com</url>
+    </pluginRepository>
+    <pluginRepository>
+      <id>openhab-artifactory-release</id>
+      <url>${repo.releaseBaseUrl}/libs-release</url>
+    </pluginRepository>
+  </pluginRepositories>
+
+  <profiles>
+    <profile>
+      <id>openhab-snapshot-repository</id>
+      <activation>
+        <property>
+          <name>!noOhSnapRepo</name>
+        </property>
+      </activation>
+      <repositories>
+        <repository>
+          <releases>
+            <enabled>false</enabled>
+          </releases>
+          <snapshots>
+            <enabled>true</enabled>
+            <updatePolicy>daily</updatePolicy>
+          </snapshots>
+          <id>openhab-artifactory-snapshot</id>
+          <name>JFrog Artifactory Repository</name>
+          <url>${repo.snapshotBaseUrl}/libs-snapshot</url>
+        </repository>
+      </repositories>
+    </profile>
+  </profiles>
 
   <build>
     <pluginManagement>
@@ -40,19 +105,14 @@
         <plugin>
           <groupId>com.itemis.maven.plugins</groupId>
           <artifactId>unleash-maven-plugin</artifactId>
-          <version>2.8.0</version>
+          <version>2.9.3</version>
           <dependencies>
             <dependency>
               <groupId>com.itemis.maven.plugins</groupId>
               <artifactId>unleash-scm-provider-git</artifactId>
-              <version>2.1.0</version>
+              <version>2.2.0</version>
             </dependency>
           </dependencies>
-        </plugin>
-        <plugin>
-          <groupId>org.codehaus.mojo</groupId>
-          <artifactId>versions-maven-plugin</artifactId>
-          <version>2.5</version>
         </plugin>
       </plugins>
     </pluginManagement>
