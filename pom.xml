@@ -22,10 +22,10 @@
   </licenses>
 
   <properties>
-    <scm.gitBaseUrl>https://github.com/openhab</scm.gitBaseUrl>
-    <repo.distBaseUrl>https://api.bintray.com/maven/openhab/mvn</repo.distBaseUrl>
-    <repo.releaseBaseUrl>https://openhab.jfrog.io/openhab</repo.releaseBaseUrl>
-    <repo.snapshotBaseUrl>${repo.releaseBaseUrl}</repo.snapshotBaseUrl>
+    <oh.scm.gitBaseUrl>https://github.com/openhab</oh.scm.gitBaseUrl>
+    <oh.repo.distBaseUrl>https://api.bintray.com/maven/openhab/mvn</oh.repo.distBaseUrl>
+    <oh.repo.releaseBaseUrl>https://openhab.jfrog.io/openhab</oh.repo.releaseBaseUrl>
+    <oh.repo.snapshotBaseUrl>${oh.repo.releaseBaseUrl}</oh.repo.snapshotBaseUrl>
   </properties>
 
   <!-- This POM must not have a <dependency> section, for the sake of reproducible builds. -->
@@ -54,7 +54,7 @@
       </snapshots>
       <id>openhab-artifactory-release</id>
       <name>JFrog Artifactory Repository</name>
-      <url>${repo.releaseBaseUrl}/libs-release</url>
+      <url>${oh.repo.releaseBaseUrl}/libs-release</url>
     </repository>
   </repositories>
 
@@ -66,7 +66,7 @@
     </pluginRepository>
     <pluginRepository>
       <id>openhab-artifactory-release</id>
-      <url>${repo.releaseBaseUrl}/libs-release</url>
+      <url>${oh.repo.releaseBaseUrl}/libs-release</url>
     </pluginRepository>
   </pluginRepositories>
 
@@ -89,7 +89,7 @@
           </snapshots>
           <id>openhab-artifactory-snapshot</id>
           <name>JFrog Artifactory Repository</name>
-          <url>${repo.snapshotBaseUrl}/libs-snapshot</url>
+          <url>${oh.repo.snapshotBaseUrl}/libs-snapshot</url>
         </repository>
       </repositories>
     </profile>
