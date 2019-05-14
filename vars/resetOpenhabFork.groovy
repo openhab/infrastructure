@@ -1,4 +1,4 @@
-def call(String gitForkBaseUrl, String componentName, String removeTagIfExists = "") {
+def call(String gitForkBaseUrl, String componentName, Boolean removeTagIfExists = true) {
 	withCredentials([usernamePassword(credentialsId: env.GIT_CREDENTIALS_ID, passwordVariable: 'gitPassword', usernameVariable: 'gitUser')]) {
 		def gitForkUrl = gitForkBaseUrl + "/" + componentName + ".git"
 		def gitBaseUrl = "https://github.com/openhab/" + componentName
@@ -6,7 +6,7 @@ def call(String gitForkBaseUrl, String componentName, String removeTagIfExists =
 		if(!env.SKIP_SANDBOX_RESET?.toBoolean()) {			
 			resetGitFork(gitForkUrl, gitBaseUrl, gitUser, gitPassword)			
 		}
-		if(removeTagIfExists != "") {
+		if(removeTagIfExists) {
 			deleteGitTag(gitForkUrl, removeTagIfExists, gitUser, gitPassword)
 		}
 	}
