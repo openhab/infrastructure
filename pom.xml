@@ -52,8 +52,8 @@
       <snapshots>
         <enabled>false</enabled>
       </snapshots>
-      <id>openhab-artifactory-release</id>
-      <name>JFrog Artifactory Repository</name>
+      <id>openhab-release</id>
+      <name>openHAB Release Repository</name>
       <url>${oh.repo.releaseBaseUrl}/libs-release</url>
     </repository>
   </repositories>
@@ -65,7 +65,8 @@
       <url>https://jcenter.bintray.com</url>
     </pluginRepository>
     <pluginRepository>
-      <id>openhab-artifactory-release</id>
+      <id>openhab-release</id>
+      <name>openHAB Release Repository</name>
       <url>${oh.repo.releaseBaseUrl}/libs-release</url>
     </pluginRepository>
   </pluginRepositories>
@@ -87,8 +88,8 @@
             <enabled>true</enabled>
             <updatePolicy>daily</updatePolicy>
           </snapshots>
-          <id>openhab-artifactory-snapshot</id>
-          <name>JFrog Artifactory Repository</name>
+          <id>openhab-snapshot</id>
+          <name>openHAB Snapshot Repository</name>
           <url>${oh.repo.snapshotBaseUrl}/libs-snapshot</url>
         </repository>
       </repositories>
