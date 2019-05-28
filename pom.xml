@@ -40,7 +40,7 @@
   <scm>
     <connection>scm:git:git@github.com:openhab/infrastructure.git</connection>
     <developerConnection>scm:git:git@github.com:openhab/infrastructure.git</developerConnection>
-    <url>git@github.com:openhab/infrastructure.git</url>
+    <url>https://github.com:openhab/infrastructure.git</url>
   </scm>
 
   <issueManagement>
