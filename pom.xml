@@ -12,13 +12,13 @@
 
   <organization>
     <name>openHAB.org</name>
-    <url>http://www.openhab.org</url>
+    <url>https://www.openhab.org</url>
   </organization>
 
   <licenses>
     <license>
       <name>Eclipse Public License 2.0</name>
-      <url>http://www.eclipse.org/legal/epl-v20.html</url>
+      <url>https://www.eclipse.org/legal/epl-v20.html</url>
     </license>
   </licenses>
 
@@ -28,7 +28,7 @@
       <name>openHAB</name>
       <email>info@openhab.org</email>
       <organization>openHAB</organization>
-      <organizationUrl>http://www.openHAB.org</organizationUrl>
+      <organizationUrl>https://www.openHAB.org</organizationUrl>
     </developer>
   </developers>
 
