@@ -3,7 +3,7 @@
 
   <groupId>org.openhab</groupId>
   <artifactId>openhab-super-pom</artifactId>
-  <version>1.0.0</version>
+  <version>1.0.1</version>
 
   <packaging>pom</packaging>
   <name>openHAB Super POM</name>
@@ -24,14 +24,9 @@
 
   <developers>
     <developer>
-      <name>Patrick Fink</name>
-      <email>mail@pfink.de</email>
-      <organization>openHAB</organization>
-      <organizationUrl>http://www.openHAB.org</organizationUrl>
-    </developer>
-    <developer>
-      <name>Kai Kreuzer</name>
-      <email>kai@openhab.org</email>
+      <id>openhab</id>
+      <name>openHAB</name>
+      <email>info@openhab.org</email>
       <organization>openHAB</organization>
       <organizationUrl>http://www.openHAB.org</organizationUrl>
     </developer>
