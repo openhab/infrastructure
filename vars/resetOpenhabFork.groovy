@@ -7,7 +7,7 @@ def call(String gitForkBaseUrl, String componentName, String tagToRemoveIfExists
 			resetGitFork(gitForkUrl, gitBaseUrl, gitUser, gitPassword)			
 		}
 		if(tagToRemoveIfExists != "") {
-			deleteGitTag(gitForkUrl, removeTagIfExists, gitUser, gitPassword)
+			deleteGitTag(gitForkUrl, tagToRemoveIfExists, gitUser, gitPassword)
 		}
 	}
 }
