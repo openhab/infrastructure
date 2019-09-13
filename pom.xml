@@ -3,7 +3,7 @@
 
   <groupId>org.openhab</groupId>
   <artifactId>openhab-super-pom</artifactId>
-  <version>1.0.1</version>
+  <version>1.0.2</version>
 
   <packaging>pom</packaging>
   <name>openHAB Super POM</name>
@@ -69,19 +69,6 @@
       <snapshots>
         <enabled>false</enabled>
       </snapshots>
-      <id>jcenter</id>
-      <name>JCenter Repository</name>
-      <url>https://jcenter.bintray.com</url>
-    </repository>
-
-    <repository>
-      <releases>
-        <enabled>true</enabled>
-        <updatePolicy>never</updatePolicy>
-      </releases>
-      <snapshots>
-        <enabled>false</enabled>
-      </snapshots>
       <id>openhab-release</id>
       <name>openHAB Release Repository</name>
       <url>${oh.repo.releaseBaseUrl}/libs-release</url>
@@ -110,6 +97,18 @@
         </property>
       </activation>
       <repositories>
+        <repository>
+          <releases>
+            <enabled>true</enabled>
+            <updatePolicy>never</updatePolicy>
+          </releases>
+          <snapshots>
+            <enabled>false</enabled>
+          </snapshots>
+          <id>openhab-release</id>
+          <name>openHAB Release Repository</name>
+          <url>${oh.repo.releaseBaseUrl}/libs-release</url>
+        </repository>
         <repository>
           <releases>
             <enabled>false</enabled>
