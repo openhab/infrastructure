@@ -97,6 +97,10 @@
         </property>
       </activation>
       <repositories>
+        <!--  
+          This repository section overrules the main one from above, if this profile is active.
+          We therefore must mention the release repo here as well.
+        -->
         <repository>
           <releases>
             <enabled>true</enabled>
