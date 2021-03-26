@@ -3,7 +3,7 @@
 
   <groupId>org.openhab</groupId>
   <artifactId>openhab-super-pom</artifactId>
-  <version>1.0.2</version>
+  <version>1.0.3</version>
 
   <packaging>pom</packaging>
   <name>openHAB Super POM</name>
@@ -53,7 +53,7 @@
 
   <properties>
     <oh.scm.gitBaseUrl>https://github.com/openhab</oh.scm.gitBaseUrl>
-    <oh.repo.distBaseUrl>https://api.bintray.com/maven/openhab/mvn</oh.repo.distBaseUrl>
+    <oh.repo.distBaseUrl>https://openhab.jfrog.io/openhab</oh.repo.distBaseUrl>
     <oh.repo.releaseBaseUrl>https://openhab.jfrog.io/openhab</oh.repo.releaseBaseUrl>
     <oh.repo.snapshotBaseUrl>${oh.repo.releaseBaseUrl}</oh.repo.snapshotBaseUrl>
   </properties>
@@ -76,11 +76,6 @@
   </repositories>
 
   <pluginRepositories>
-    <pluginRepository>
-      <id>jcenter</id>
-      <name>JCenter Repository</name>
-      <url>https://jcenter.bintray.com</url>
-    </pluginRepository>
     <pluginRepository>
       <id>openhab-release</id>
       <name>openHAB Release Repository</name>
