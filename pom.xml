@@ -3,7 +3,7 @@
 
   <groupId>org.openhab</groupId>
   <artifactId>openhab-super-pom</artifactId>
-  <version>1.0.3</version>
+  <version>1.0.4</version>
 
   <packaging>pom</packaging>
   <name>openHAB Super POM</name>
@@ -62,6 +62,19 @@
 
   <repositories>
     <repository>
+      <id>central</id>
+      <name>Maven Central</name>
+      <layout>default</layout>
+      <url>https://repo1.maven.org/maven2</url>
+      <releases>
+        <enabled>true</enabled>
+        <updatePolicy>never</updatePolicy>
+      </releases>
+      <snapshots>
+        <enabled>false</enabled>
+      </snapshots>
+    </repository>
+    <repository>
       <releases>
         <enabled>true</enabled>
         <updatePolicy>never</updatePolicy>
@@ -76,6 +89,12 @@
   </repositories>
 
   <pluginRepositories>
+    <pluginRepository>
+      <id>central</id>
+      <name>Maven Central</name>
+      <layout>default</layout>
+      <url>https://repo1.maven.org/maven2</url>
+    </pluginRepository>
     <pluginRepository>
       <id>openhab-release</id>
       <name>openHAB Release Repository</name>
