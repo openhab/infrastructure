@@ -75,6 +75,9 @@
       </snapshots>
     </repository>
     <repository>
+      <id>openhab-release</id>
+      <name>openHAB Release Repository</name>
+      <url>${oh.repo.releaseBaseUrl}/libs-release</url>
       <releases>
         <enabled>true</enabled>
         <updatePolicy>never</updatePolicy>
@@ -82,9 +85,6 @@
       <snapshots>
         <enabled>false</enabled>
       </snapshots>
-      <id>openhab-release</id>
-      <name>openHAB Release Repository</name>
-      <url>${oh.repo.releaseBaseUrl}/libs-release</url>
     </repository>
   </repositories>
 
@@ -116,6 +116,9 @@
           We therefore must mention the release repo here as well.
         -->
         <repository>
+          <id>openhab-release</id>
+          <name>openHAB Release Repository</name>
+          <url>${oh.repo.releaseBaseUrl}/libs-release</url>
           <releases>
             <enabled>true</enabled>
             <updatePolicy>never</updatePolicy>
@@ -123,11 +126,11 @@
           <snapshots>
             <enabled>false</enabled>
           </snapshots>
-          <id>openhab-release</id>
-          <name>openHAB Release Repository</name>
-          <url>${oh.repo.releaseBaseUrl}/libs-release</url>
         </repository>
         <repository>
+          <id>openhab-snapshot</id>
+          <name>openHAB Snapshot Repository</name>
+          <url>${oh.repo.snapshotBaseUrl}/libs-snapshot</url>
           <releases>
             <enabled>false</enabled>
           </releases>
@@ -135,11 +138,15 @@
             <enabled>true</enabled>
             <updatePolicy>daily</updatePolicy>
           </snapshots>
+        </repository>
+      </repositories>
+      <pluginRepositories>
+        <pluginRepository>
           <id>openhab-snapshot</id>
           <name>openHAB Snapshot Repository</name>
           <url>${oh.repo.snapshotBaseUrl}/libs-snapshot</url>
-        </repository>
-      </repositories>
+        </pluginRepository>
+      </pluginRepositories>
     </profile>
     <profile>
       <id>sign</id>
