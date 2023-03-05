@@ -3,7 +3,7 @@
 
   <groupId>org.openhab</groupId>
   <artifactId>openhab-super-pom</artifactId>
-  <version>1.0.5</version>
+  <version>1.0.6</version>
 
   <packaging>pom</packaging>
   <name>openHAB Super POM</name>
@@ -56,6 +56,8 @@
     <oh.repo.distBaseUrl>https://openhab.jfrog.io/openhab</oh.repo.distBaseUrl>
     <oh.repo.releaseBaseUrl>https://openhab.jfrog.io/openhab</oh.repo.releaseBaseUrl>
     <oh.repo.snapshotBaseUrl>${oh.repo.releaseBaseUrl}</oh.repo.snapshotBaseUrl>
+    <oh.unleash.version>2.9.3</oh.unleash.version>
+    <oh.unleash.git.version>2.2.0</oh.unleash.git.version>
   </properties>
 
   <!-- This POM must not have a <dependency> section, for the sake of reproducible builds. -->
@@ -111,7 +113,7 @@
         </property>
       </activation>
       <repositories>
-        <!--  
+        <!--
           This repository section overrules the main one from above, if this profile is active.
           We therefore must mention the release repo here as well.
         -->
@@ -186,12 +188,12 @@
         <plugin>
           <groupId>com.itemis.maven.plugins</groupId>
           <artifactId>unleash-maven-plugin</artifactId>
-          <version>2.9.3</version>
+          <version>${oh.unleash.version}</version>
           <dependencies>
             <dependency>
               <groupId>com.itemis.maven.plugins</groupId>
               <artifactId>unleash-scm-provider-git</artifactId>
-              <version>2.2.0</version>
+              <version>${oh.unleash.git.version}</version>
             </dependency>
           </dependencies>
         </plugin>
